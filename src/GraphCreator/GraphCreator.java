@@ -1,5 +1,7 @@
 package GraphCreator;
 
+import Node.Node;
+
 import java.util.ArrayList;
 
 public class GraphCreator {
