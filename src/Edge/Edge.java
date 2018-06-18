@@ -23,6 +23,14 @@ public class Edge {
         // System.out.println("Edge created with id: " + this.edgeId);
     }
 
+    public String getEdgeStartingNode() {
+        return edgeStartingNode;
+    }
+
+    public String getEdgeEndingNode() {
+        return edgeEndingNode;
+    }
+
     @Override
     public String toString() {
         return this.edgeId + " " + this.edgeCost + " " + this.edgeStartingNode + " " + this.edgeEndingNode;
