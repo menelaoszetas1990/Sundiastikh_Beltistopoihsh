@@ -5,6 +5,7 @@ import Node.Node;
 import RandomGenerator.RandomGenerator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GraphCreator {
     // List of nodes
@@ -56,7 +57,7 @@ public class GraphCreator {
                 }
 
                 arrayNodesEdges = new int[nodeNumber][edges.size()];
-                fillArrayNodesEdges();
+                fillArrayNodesEdges(nodeNumber, edges.size());
             }
 
             completeGraph = checkGraph();
@@ -74,17 +75,24 @@ public class GraphCreator {
         return true;
     }
 
-    private void fillArrayNodesEdges() {
+    private void fillArrayNodesEdges(int rows, int columns) {
         nodes.forEach(node -> {
             edges.forEach(
                 edge -> {
-                    if (node.getNodeId() == edge.getEdgeStartingNode())
+                    if (node.getNodeId().equals(edge.getEdgeStartingNode()))
                         arrayNodesEdges[nodes.indexOf(node)][edges.indexOf(edge)] = 1;
                     if (node.getNodeId().equals(edge.getEdgeEndingNode()))
                         arrayNodesEdges[nodes.indexOf(node)][edges.indexOf(edge)] = -1;
                 }
             );
         });
-        System.out.println(arrayNodesEdges);
+//        test reasons
+//        for (int i = 0; i < rows; i++) {
+//            for (int j = 0; j < columns; j++) {
+//                System.out.print(arrayNodesEdges[i][j]);
+//                System.out.print("\t");
+//            }
+//            System.out.println();
+//        }
     }
 }
