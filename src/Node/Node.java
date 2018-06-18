@@ -43,6 +43,11 @@ public class Node {
         return nearestNodesList;
     }
 
+    public void reset() {
+        nodeIDGiver = 0;
+        nearestNodesList.clear();
+    }
+
     @Override
     public String toString() {
         return this.nodeId;

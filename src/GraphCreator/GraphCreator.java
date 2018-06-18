@@ -17,7 +17,6 @@ public class GraphCreator {
 
         boolean completeGraph = false;
         do {
-
             // with a repetition we create the number of nodes asked from the user
             for (int i = 0; i < nodeNumber; i++) {
                 // create and add the new nodes to the list
@@ -60,18 +59,35 @@ public class GraphCreator {
                 fillArrayNodesEdges(nodeNumber, edges.size());
             }
 
-            completeGraph = checkGraph();
+            completeGraph = checkGraph(nodeNumber, edges.size());
         } while (!completeGraph);
-
-
-        edges.forEach(edge -> System.out.println(edge));
 
         // show the list for test
         for (int j=0; j < nodes.size(); j++)
         System.out.println("The nodes list: " + nodes.get(j).getNodeId());
     }
 
-    private static boolean checkGraph() {
+    private boolean checkGraph(int rows, int columns) {
+        boolean goodGraph;
+        for (int i = 0; i < rows; i++) {
+            goodGraph = false;
+            for (int j = 0; j < columns; j++) {
+                if (arrayNodesEdges[i][j] == -1) {
+                    goodGraph = true;
+                }
+            }
+            if (!goodGraph) {
+                System.out.println("Not a good graph");
+                nodes.clear();
+                Node node = new Node();
+                node.reset();
+                edges.clear();
+                Edge edge = new Edge();
+                edge.reset();
+                arrayNodesEdges = null;
+                return false;
+            }
+        }
         return true;
     }
 

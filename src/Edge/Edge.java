@@ -10,6 +10,8 @@ public class Edge {
     // variable used to give ID number at nodes
     public static int edgeIDGiver = 0;
 
+    public Edge() {}
+
     public Edge (int edgeCost, String edgeStartingNode, String edgeEndingNode) {
         // assign an id to each edge via the edgeIDGiver static variable and
         // the pattern "edge+edgeIDGiver" ex: edge1 as edge id
@@ -29,6 +31,10 @@ public class Edge {
 
     public String getEdgeEndingNode() {
         return edgeEndingNode;
+    }
+
+    public void reset() {
+        edgeIDGiver = 0;
     }
 
     @Override
