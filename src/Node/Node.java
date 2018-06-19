@@ -2,13 +2,15 @@ package Node;
 
 import java.util.ArrayList;
 
+// class for the Nodes creation
 public class Node {
 
     // variable used to give ID number at nodes
-    public static int nodeIDGiver = 0;
+    private static int nodeIDGiver = 0;
 
-    // node's ID variable is private for security reasons
+    // node's ID variable is private
     private String nodeId;
+
     // node's list of nearest nodes
     private ArrayList<Node> nearestNodesList = new ArrayList<Node>();
 
@@ -18,9 +20,6 @@ public class Node {
         // the pattern "node+nodeIDGiver" ex: node1 as node id
         nodeIDGiver++;
         this.nodeId = "node" + nodeIDGiver;
-
-        // logging for test reasons
-        // System.out.println("Node created with id: " + this.nodeId);
     }
 
     // getter method to return the node ID when needed
@@ -28,12 +27,7 @@ public class Node {
         return nodeId;
     }
 
-    // getter method to return the total amount of nodes
-    public int getNodesNumber() {
-        return nodeIDGiver;
-    }
-
-    // setter method to set ids of nearest nodes
+    // setter method to set nearest nodes
     public void setNearestNodesList(Node nearestNodeId) {
         nearestNodesList.add(nearestNodeId);
     }
@@ -43,11 +37,14 @@ public class Node {
         return nearestNodesList;
     }
 
+    // method to reset the static vars of the class if
+    // the creation of the graph fails
     public void reset() {
         nodeIDGiver = 0;
         nearestNodesList.clear();
     }
 
+    // method to override how a node is shown to the console
     @Override
     public String toString() {
         return this.nodeId;

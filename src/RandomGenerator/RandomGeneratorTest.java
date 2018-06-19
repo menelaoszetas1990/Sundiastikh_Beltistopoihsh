@@ -1,5 +1,6 @@
 package RandomGenerator;
 
+// class for test reasons
 public class RandomGeneratorTest {
     public static void main (String args[]) {
         RandomGenerator testNumber = new RandomGenerator();
