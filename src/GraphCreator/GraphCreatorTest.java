@@ -5,6 +5,6 @@ public class GraphCreatorTest {
 
         //  test the creation of new nodes
         GraphCreator test = new GraphCreator();
-        test.createGraph(10);
+        test.createGraph(15);
     }
 }
