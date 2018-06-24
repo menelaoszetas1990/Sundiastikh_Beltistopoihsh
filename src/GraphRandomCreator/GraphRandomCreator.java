@@ -48,10 +48,10 @@ public class GraphRandomCreator {
 
                 // create a random number of Nodes that the specific Node will connect to
                 // This number will be at least 1 and smaller or equal to the total number of possible
-                // Nodes that it can connect to (nodeNumber -1) because in order to have minimally connected
+                // Nodes that it can connect to (nodesNumber -1) because in order to have minimally connected
                 // Graph at least one edge has to start from every Node
                 int numbersOfNodesToConnect = new RandomGenerator().generateNumber(possibleEndNodes.size());
-                // numbersOfNodesToConnect = new RandomGenerator().generateNumber(4);
+                numbersOfNodesToConnect = new RandomGenerator().generateNumber(4);
 
                 // repetition till the generated number to create and add new Edges from the specific Node
                 while (numbersOfNodesToConnect > 0) {
@@ -90,6 +90,8 @@ public class GraphRandomCreator {
 
 
             // console printing of the Nodes - Nodes array
+            System.out.println("------------------------------------------------------------");
+            System.out.println("This is the nodes - nodes final table. Ignore all the above");
             for (int i = 0; i < nodeNumber; i++) {
                 for (int j = 0; j < nodeNumber; j++) {
                     System.out.print(arrayNodesNodes[i][j]);
