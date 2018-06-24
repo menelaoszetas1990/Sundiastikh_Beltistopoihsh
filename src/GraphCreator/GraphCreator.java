@@ -89,7 +89,8 @@ public class GraphCreator {
         edges.add(new Edge(77,	"node15",	"node3"));
 
         // fill the Node - Edges array
-        fillArrayNodesEdges(nodesNumber, edges.size());
+        arrayNodesEdges = new int[nodesNumber][edges.size()];
+        fillArrayNodesEdges();
 
         // fill in the adjacency list
         // first create the nearestNodesList for each node
@@ -107,7 +108,7 @@ public class GraphCreator {
     // method to fill the array of Nodes - Edges
     // A lookup at each edge is done and an 1 is assign at its starting Node
     // A lookup at each edge is done and a -1 is assign at its ending Node
-    private void fillArrayNodesEdges(int rows, int columns) {
+    private void fillArrayNodesEdges() {
         nodes.forEach(node -> {
             edges.forEach(
                     edge -> {
