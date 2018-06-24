@@ -1,10 +1,10 @@
-package GraphCreator;
+package GraphRandomCreator;
 
-public class GraphCreatorTest {
+public class GraphRandomCreatorTest {
     public static void main (String args[]) {
 
         //  test the creation of new nodes
-        GraphCreator test = new GraphCreator();
+        GraphRandomCreator test = new GraphRandomCreator();
         test.createGraph(15);
     }
 }
