@@ -97,7 +97,6 @@ public class GraphRandomCreator {
                 }
                 System.out.println();
             }
-            System.out.println("out");
 
             // in order to secure that Graph is minimally connected 2 tests need to be passed
             // both test methods return a boolean
