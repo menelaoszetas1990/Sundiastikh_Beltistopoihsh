@@ -39,6 +39,11 @@ public class Edge {
         return edgeEndingNode;
     }
 
+    // method to get the cost of the Edge
+    public int getEdgeCost() {
+        return edgeCost;
+    }
+
     // method to reset Edge's class static variables
     public void reset() {
         edgeIDGiver = 0;
