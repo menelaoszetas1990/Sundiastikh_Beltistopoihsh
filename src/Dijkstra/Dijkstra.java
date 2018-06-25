@@ -18,7 +18,7 @@ import java.util.Scanner;
                the one with the lowest distance from the source.
             b) Calculate new distances to direct neighbors by keeping the lowest distance at each evaluation.
             c) Add neighbors that are not yet settled to the unsettled nodes set.
-        5) Pick the lowest distance
+        5) Show the result
 */
 
 public class Dijkstra {
@@ -135,10 +135,13 @@ public class Dijkstra {
 
         // Step five: show the results
         System.out.println("Shortest path from " + startingNode + " to " + endingNode + " is: ");
+        // ending node is picked because all distances are calculated for all nodes
+        // so they will have been calculated for that one also
         for (Node node: endingNode.getShortestPath()) {
             System.out.print(node + " -> ");
-        };
-        System.out.print(endingNode);
+        }
+        System.out.println(endingNode);
+        System.out.println("Total cost: " + endingNode.getDistanceFromSource());
     }
 
     // get the node from unsettled nodes list with the lowest distance from the starting node
