@@ -1,6 +1,6 @@
 package Node;
 
-import java.util.ArrayList;
+import java.util.*;
 
 // class for the Nodes creation
 public class Node {
@@ -43,6 +43,45 @@ public class Node {
         nodeIDGiver = 0;
         nearestNodesList.clear();
     }
+
+    // ----------------------------------------------------------------------------------------
+    // Functionality for Dijkstra
+    private int distanceFromSource = Integer.MAX_VALUE;
+    Map <Node, Integer> distanceToAdjacentNodes = new HashMap<Node, Integer>();
+
+    private LinkedList<Node> shortestPath = new LinkedList<>();
+
+    public void setShortestPath(LinkedList<Node> shortestPath) {
+        this.shortestPath = shortestPath;
+    }
+
+    public List<Node> getShortestPath() {
+        return shortestPath;
+    }
+
+    public void setDistanceFromSource(int distanceFromSource) {
+        this.distanceFromSource = distanceFromSource;
+    }
+
+    public int getDistanceFromSource() {
+        return distanceFromSource;
+    }
+
+    public Map <Node, Integer> getDistanceToAdjacentNodes() {
+        return distanceToAdjacentNodes;
+    }
+
+    public void addDistanceToAdjacentNodes(Node destinationNode, int distance) {
+        distanceToAdjacentNodes.put(destinationNode, distance);
+    }
+
+    public int getDistanceToAdjacentNodes(Node adjacentNode) {
+        if (distanceToAdjacentNodes.get(adjacentNode) != null)
+            return distanceToAdjacentNodes.get(adjacentNode);
+        return Integer.MAX_VALUE;
+    }
+    // ----------------------------------------------------------------------------------------
+
 
     // method to override how a node is shown to the console
     @Override
