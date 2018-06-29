@@ -54,8 +54,6 @@ public class Dijkstra {
         // is not yet calculated)
         ArrayList<Node> unsettledNodes = new ArrayList<Node>();
 
-        // user input
-        int input;
         // ask user to pick the starting Node
         for (int i = 1; i <= graph.nodes.size(); i++) {
             System.out.println(i + " " + graph.nodes.get(i - 1));
