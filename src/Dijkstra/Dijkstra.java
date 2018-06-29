@@ -132,7 +132,7 @@ public class Dijkstra {
         } while (unsettledNodes.size() != 0);
 
         // Step five: show the results
-        System.out.println("Shortest path from " + startingNode + " to " + endingNode + " is: ");
+        System.out.println("\nShortest path from " + startingNode + " to " + endingNode + " is: ");
         // ending node is picked because all distances are calculated for all nodes
         // so they will have been calculated for that one also
         for (Node node: endingNode.getShortestPath()) {

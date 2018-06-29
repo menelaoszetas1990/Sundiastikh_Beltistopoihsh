@@ -83,6 +83,15 @@ public class Node {
     // ----------------------------------------------------------------------------------------
 
 
+    // ----------------------------------------------------------------------------------------
+    // Functionality for Floyd-Marshall
+    public Node(int num) {
+        if (num == 0)
+            this.nodeId = "Empty";
+    }
+    // ----------------------------------------------------------------------------------------
+
+
     // method to override how a node is shown to the console
     @Override
     public String toString() {
