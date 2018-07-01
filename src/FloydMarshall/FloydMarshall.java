@@ -155,6 +155,9 @@ public class FloydMarshall {
                 }
                 // if no path can be established then leave it null
                 else {
+                    // because inserting null throws an exception when there is an iteration
+                    // at the path array, at the specific place an empty node (special node)
+                    // is inserted based on the constructor at the Nodes class
                     path[i][j] = new Node(0);
                 }
             }
