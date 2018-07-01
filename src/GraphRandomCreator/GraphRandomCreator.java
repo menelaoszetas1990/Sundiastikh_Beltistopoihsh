@@ -51,6 +51,7 @@ public class GraphRandomCreator {
                 // Nodes that it can connect to (nodesNumber -1) because in order to have minimally connected
                 // Graph at least one edge has to start from every Node
                 int numbersOfNodesToConnect = new RandomGenerator().generateNumber(possibleEndNodes.size());
+                // insert hardcoded the max size or edges that start from each node
                 numbersOfNodesToConnect = new RandomGenerator().generateNumber(4);
 
                 // repetition till the generated number to create and add new Edges from the specific Node
