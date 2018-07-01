@@ -89,18 +89,6 @@ public class GraphRandomCreator {
             // fill the Nodes - Nodes array
             fillArrayNodesNodes(nodeNumber);
 
-
-            // console printing of the Nodes - Nodes array
-            System.out.println("------------------------------------------------------------");
-            System.out.println("This is the nodes - nodes final table. Ignore all the above");
-            for (int i = 0; i < nodeNumber; i++) {
-                for (int j = 0; j < nodeNumber; j++) {
-                    System.out.print(arrayNodesNodes[i][j]);
-                    System.out.print("\t");
-                }
-                System.out.println();
-            }
-
             // in order to secure that Graph is minimally connected 2 tests need to be passed
             // both test methods return a boolean
             // first test ensures that all Nodes accept at least 1 edge
@@ -115,7 +103,16 @@ public class GraphRandomCreator {
             // if both test pass then the creation of the raph is complete
         } while (!completeGraph);
 
-
+        // console printing of the Nodes - Nodes array
+        System.out.println("------------------------------------------------------------");
+        System.out.println("This is the nodes - nodes final table. Ignore all the above");
+        for (int i = 0; i < nodeNumber; i++) {
+            for (int j = 0; j < nodeNumber; j++) {
+                System.out.print(arrayNodesNodes[i][j]);
+                System.out.print("\t");
+            }
+            System.out.println();
+        }
 
         // console printing of the Edges list
         edges.forEach(
