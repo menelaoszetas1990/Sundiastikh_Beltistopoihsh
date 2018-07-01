@@ -1,4 +1,4 @@
-package Alorithms.FloydMarshall;
+package Algorithms.FloydMarshall;
 
 import Graph_Creators.GraphCreator.GraphCreator;
 import Nodes_Edges.Node.Node;
@@ -20,7 +20,7 @@ public class FloydMarshall {
     // caused some arithmetical problems at the program flow
     private static final int INF = 100000;
 
-    public static void main(String[] args) {
+    public static void runFloydMarshall() {
         // create the graph
         GraphCreator graph = new GraphCreator();
         graph.createGraph();

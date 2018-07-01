@@ -45,7 +45,7 @@ public class Node {
     }
 
     // ----------------------------------------------------------------------------------------
-    // Functionality for Alorithms.Dijkstra
+    // Functionality for Algorithms.Dijkstra
     private int distanceFromSource = Integer.MAX_VALUE;
     Map <Node, Integer> distanceToAdjacentNodes = new HashMap<Node, Integer>();
 

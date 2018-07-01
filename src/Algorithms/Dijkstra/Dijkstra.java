@@ -1,4 +1,4 @@
-package Alorithms.Dijkstra;
+package Algorithms.Dijkstra;
 
 import Graph_Creators.GraphCreator.GraphCreator;
 import Nodes_Edges.Node.Node;
@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /*
-    Steps to solve the Alorithms.Dijkstra algorithm:
+    Steps to solve the Dijkstra algorithm:
         1) Set distance to startNode to zero.
         2) Set all other distances to an infinite value.
         3) We add the startNode to the unsettled nodes set.
@@ -24,7 +24,7 @@ import java.util.Scanner;
 public class Dijkstra {
     private static Scanner userInput = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void runDijkstra() {
         // create the graph
         GraphCreator graph = new GraphCreator();
         graph.createGraph();
@@ -42,7 +42,7 @@ public class Dijkstra {
                 )
         );
 
-        // declare the nodes that the user will chose for the Alorithms.Dijkstra algorithm
+        // declare the nodes that the user will chose for the Algorithms.Dijkstra algorithm
         // starting Nodes_Edges.Node
         Node startingNode;
         // ending - target Nodes_Edges.Node
@@ -58,7 +58,7 @@ public class Dijkstra {
         for (int i = 1; i <= graph.nodes.size(); i++) {
             System.out.println(i + " " + graph.nodes.get(i - 1));
         }
-        System.out.println("Pick a Nodes_Edges.Node number from the list above for the starting Nodes_Edges.Node:");
+        System.out.println("Pick a Node number from the list above for the starting Node:");
         int userIn;
         // check and validate what user inserted
         do {
@@ -74,7 +74,7 @@ public class Dijkstra {
         startingNode = graph.nodes.get(userIn - 1);
         // System.out.println(startingNode);
 
-        System.out.println("Pick a Nodes_Edges.Node number from the list above for the ending Nodes_Edges.Node:");
+        System.out.println("Pick a Node number from the list above for the ending Node:");
         // check and validate what user inserted
         do {
             while (!userInput.hasNextInt()) {
