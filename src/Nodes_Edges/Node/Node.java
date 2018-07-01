@@ -1,4 +1,4 @@
-package Node;
+package Nodes_Edges.Node;
 
 import java.util.*;
 
@@ -14,7 +14,7 @@ public class Node {
     // node's list of nearest nodes
     private ArrayList<Node> nearestNodesList = new ArrayList<Node>();
 
-    // constructor for each Node
+    // constructor for each Nodes_Edges.Node
     public Node() {
         // assign an id to each node via the nodeIDGiver static variable and
         // the pattern "node+nodeIDGiver" ex: node1 as node id
@@ -45,7 +45,7 @@ public class Node {
     }
 
     // ----------------------------------------------------------------------------------------
-    // Functionality for Dijkstra
+    // Functionality for Alorithms.Dijkstra
     private int distanceFromSource = Integer.MAX_VALUE;
     Map <Node, Integer> distanceToAdjacentNodes = new HashMap<Node, Integer>();
 

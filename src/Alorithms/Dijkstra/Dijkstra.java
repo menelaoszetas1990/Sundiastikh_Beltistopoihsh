@@ -1,7 +1,7 @@
-package Dijkstra;
+package Alorithms.Dijkstra;
 
-import GraphCreator.GraphCreator;
-import Node.Node;
+import Graph_Creators.GraphCreator.GraphCreator;
+import Nodes_Edges.Node.Node;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /*
-    Steps to solve the Dijkstra algorithm:
+    Steps to solve the Alorithms.Dijkstra algorithm:
         1) Set distance to startNode to zero.
         2) Set all other distances to an infinite value.
         3) We add the startNode to the unsettled nodes set.
@@ -42,10 +42,10 @@ public class Dijkstra {
                 )
         );
 
-        // declare the nodes that the user will chose for the Dijkstra algorithm
-        // starting Node
+        // declare the nodes that the user will chose for the Alorithms.Dijkstra algorithm
+        // starting Nodes_Edges.Node
         Node startingNode;
-        // ending - target Node
+        // ending - target Nodes_Edges.Node
         Node endingNode;
 
         // array list of nodes that are settled (nodes with known minimum distance from the starting node)
@@ -54,11 +54,11 @@ public class Dijkstra {
         // is not yet calculated)
         ArrayList<Node> unsettledNodes = new ArrayList<Node>();
 
-        // ask user to pick the starting Node
+        // ask user to pick the starting Nodes_Edges.Node
         for (int i = 1; i <= graph.nodes.size(); i++) {
             System.out.println(i + " " + graph.nodes.get(i - 1));
         }
-        System.out.println("Pick a Node number from the list above for the starting Node:");
+        System.out.println("Pick a Nodes_Edges.Node number from the list above for the starting Nodes_Edges.Node:");
         int userIn;
         // check and validate what user inserted
         do {
@@ -74,7 +74,7 @@ public class Dijkstra {
         startingNode = graph.nodes.get(userIn - 1);
         // System.out.println(startingNode);
 
-        System.out.println("Pick a Node number from the list above for the ending Node:");
+        System.out.println("Pick a Nodes_Edges.Node number from the list above for the ending Nodes_Edges.Node:");
         // check and validate what user inserted
         do {
             while (!userInput.hasNextInt()) {

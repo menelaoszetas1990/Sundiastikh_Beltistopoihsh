@@ -1,4 +1,4 @@
-package GraphRandomCreator;
+package Graph_Creators.GraphRandomCreator;
 
 public class GraphRandomCreatorTest {
     public static void main (String args[]) {

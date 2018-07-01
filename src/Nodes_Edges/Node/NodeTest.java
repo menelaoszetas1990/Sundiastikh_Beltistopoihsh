@@ -1,4 +1,4 @@
-package Node;
+package Nodes_Edges.Node;
 
 // class for test reasons
 public class NodeTest {

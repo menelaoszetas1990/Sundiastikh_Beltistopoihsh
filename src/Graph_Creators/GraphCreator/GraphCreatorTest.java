@@ -1,4 +1,4 @@
-package GraphCreator;
+package Graph_Creators.GraphCreator;
 
 // class for test reasons
 public class GraphCreatorTest {

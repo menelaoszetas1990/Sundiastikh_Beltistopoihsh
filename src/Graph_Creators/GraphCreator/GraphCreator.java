@@ -1,7 +1,7 @@
-package GraphCreator;
+package Graph_Creators.GraphCreator;
 
-import Edge.Edge;
-import Node.Node;
+import Nodes_Edges.Edge.Edge;
+import Nodes_Edges.Node.Node;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ public class GraphCreator {
     public int[][] arrayNodesEdges;
     // Array of Nodes to edges
     public int[][] arrayNodesNodes;
-    // List of lists of nearby Nodes that a Node can go (adjacency list)
+    // List of lists of nearby Nodes that a Nodes_Edges.Node can go (adjacency list)
     private ArrayList<ArrayList<Node>> adjacencyArrayList = new ArrayList<ArrayList<Node>>();
 
     // number of nodes
@@ -26,7 +26,7 @@ public class GraphCreator {
 
         // repetition to create the number of nodes asked from the user
         for (int i = 0; i < nodesNumber; i++) {
-            // create a Node
+            // create a Nodes_Edges.Node
             Node newNode = new Node();
             // add the new Nodes to the Nodes list
             nodes.add(newNode);
@@ -88,7 +88,7 @@ public class GraphCreator {
         edges.add(new Edge(29,	"node15",	"node13"));
         edges.add(new Edge(77,	"node15",	"node3"));
 
-        // fill the Node - Edges array
+        // fill the Nodes_Edges.Node - Edges array
         arrayNodesEdges = new int[nodesNumber][edges.size()];
         fillArrayNodesEdges();
 
@@ -106,8 +106,8 @@ public class GraphCreator {
     }
 
     // method to fill the array of Nodes - Edges
-    // A lookup at each edge is done and an 1 is assign at its starting Node
-    // A lookup at each edge is done and a -1 is assign at its ending Node
+    // A lookup at each edge is done and an 1 is assign at its starting Nodes_Edges.Node
+    // A lookup at each edge is done and a -1 is assign at its ending Nodes_Edges.Node
     private void fillArrayNodesEdges() {
         nodes.forEach(node -> {
             edges.forEach(

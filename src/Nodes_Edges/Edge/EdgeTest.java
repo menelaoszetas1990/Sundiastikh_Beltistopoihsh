@@ -1,4 +1,4 @@
-package Edge;
+package Nodes_Edges.Edge;
 
 import RandomGenerator.RandomGenerator;
 

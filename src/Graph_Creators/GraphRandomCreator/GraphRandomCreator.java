@@ -1,7 +1,7 @@
-package GraphRandomCreator;
+package Graph_Creators.GraphRandomCreator;
 
-import Edge.Edge;
-import Node.Node;
+import Nodes_Edges.Edge.Edge;
+import Nodes_Edges.Node.Node;
 import RandomGenerator.RandomGenerator;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class GraphRandomCreator {
     public int[][] arrayNodesEdges;
     // Array of Nodes to edges
     public int[][] arrayNodesNodes;
-    // List of lists of nearby Nodes that a Node can go (adjacency list)
+    // List of lists of nearby Nodes that a Nodes_Edges.Node can go (adjacency list)
     private ArrayList<ArrayList<Node>> adjacencyArrayList = new ArrayList<ArrayList<Node>>();
 
     // main method that creates a Graph
@@ -28,33 +28,33 @@ public class GraphRandomCreator {
         do {
             // repetition to create the number of nodes asked from the user
             for (int i = 0; i < nodeNumber; i++) {
-                // create a Node
+                // create a Nodes_Edges.Node
                 Node newNode = new Node();
                 // add the new Nodes to the Nodes list
                 nodes.add(newNode);
             }
 
-            // create for each Node, Edges that start from that Node and end up to another Node
+            // create for each Nodes_Edges.Node, Edges that start from that Nodes_Edges.Node and end up to another Nodes_Edges.Node
             for (int i = 0; i < nodeNumber; i++) {
-                // create an ArrayList with all the possible indexes of nodes that the Node can connect.
-                // Do not include the index of the Node that matches that Node because it is useless
+                // create an ArrayList with all the possible indexes of nodes that the Nodes_Edges.Node can connect.
+                // Do not include the index of the Nodes_Edges.Node that matches that Nodes_Edges.Node because it is useless
                 ArrayList<Node> possibleEndNodes = new ArrayList<Node>();
                 for (int j = 0; j < nodeNumber; j++) {
-                    // skip the Node that the list is created for
+                    // skip the Nodes_Edges.Node that the list is created for
                     if (j != i) {
                         possibleEndNodes.add(nodes.get(j));
                     }
                 }
 
-                // create a random number of Nodes that the specific Node will connect to
+                // create a random number of Nodes that the specific Nodes_Edges.Node will connect to
                 // This number will be at least 1 and smaller or equal to the total number of possible
                 // Nodes that it can connect to (nodesNumber -1) because in order to have minimally connected
-                // Graph at least one edge has to start from every Node
+                // Graph at least one edge has to start from every Nodes_Edges.Node
                 int numbersOfNodesToConnect = new RandomGenerator().generateNumber(possibleEndNodes.size());
                 // insert hardcoded the max size or edges that start from each node
                 numbersOfNodesToConnect = new RandomGenerator().generateNumber(4);
 
-                // repetition till the generated number to create and add new Edges from the specific Node
+                // repetition till the generated number to create and add new Edges from the specific Nodes_Edges.Node
                 while (numbersOfNodesToConnect > 0) {
                     // create a random number of node that the specific node will connect to.
                     // that number will be transformed to an index number (add to it -1)
@@ -63,25 +63,25 @@ public class GraphRandomCreator {
                     // decrease the number of nodes to connect to
                     numbersOfNodesToConnect--;
 
-                    // create a new Edge with a random cost, starting from the Specific Node
+                    // create a new Nodes_Edges.Edge with a random cost, starting from the Specific Nodes_Edges.Node
                     // and ending at a random one from the list of possible Nodes indexes created above (possibleEndNodes)
-                    // Because it is asked to give the Nodes id, getNodeId() is used for every starting and ending Node
+                    // Because it is asked to give the Nodes id, getNodeId() is used for every starting and ending Nodes_Edges.Node
                     Edge newEdge = new Edge(new RandomGenerator().generateNumber(), nodes.get(i).getNodeId(), possibleEndNodes.get(randomNode - 1).getNodeId());
 
-                    // add to the specific Node the nodes it connects to
+                    // add to the specific Nodes_Edges.Node the nodes it connects to
                     nodes.get(i).setNearestNodesList(possibleEndNodes.get(randomNode - 1));
 
-                    // remove the already used Node index from the list
+                    // remove the already used Nodes_Edges.Node index from the list
                     possibleEndNodes.remove((randomNode - 1));
 
-                    // add the new Edge at Edges List
+                    // add the new Nodes_Edges.Edge at Edges List
                     edges.add(newEdge);
                 }
             }
 
-            // create the Node - Edges array with the appropriate sizes
+            // create the Nodes_Edges.Node - Edges array with the appropriate sizes
             arrayNodesEdges = new int[nodeNumber][edges.size()];
-            // fill the Node - Edges array
+            // fill the Nodes_Edges.Node - Edges array
             fillArrayNodesEdges(nodeNumber, edges.size());
 
             // create the Nodes - Nodes array with the appropriate sizes
@@ -131,25 +131,25 @@ public class GraphRandomCreator {
         for (int i = 0; i < rows; i++) {
             minimallyConnectedGraph = false;
 
-            // check if the specific i Node accepts an edge from other nodes
+            // check if the specific i Nodes_Edges.Node accepts an edge from other nodes
             for (int j = 0; j < columns; j++) {
                 if (arrayNodesEdges[i][j] == -1) {
                     minimallyConnectedGraph = true;
                 }
             }
 
-            // if at least one Node fails to pass the 1st test reset the Graph
+            // if at least one Nodes_Edges.Node fails to pass the 1st test reset the Graph
             if (!minimallyConnectedGraph) {
                 // clear the lists
                 nodes.clear();
                 edges.clear();
                 adjacencyArrayList.clear();
 
-                // reset the Node class variables
+                // reset the Nodes_Edges.Node class variables
                 Node node = new Node();
                 node.reset();
 
-                // reset the Edge class variables
+                // reset the Nodes_Edges.Edge class variables
                 Edge edge = new Edge();
                 edge.reset();
 
@@ -178,7 +178,7 @@ public class GraphRandomCreator {
         int[][] nodesNodesEliminationArray = arrayNodesNodes.clone();
 
         // Assuming the start is form the 1st node.
-        // Success of test is as soon us all Nodes are passed and we get back to the starting Node
+        // Success of test is as soon us all Nodes are passed and we get back to the starting Nodes_Edges.Node
         startingNode = nodes.get(0);
         previousNode = nodes.get(0);
         currentNode = nodes.get(0);
@@ -187,14 +187,14 @@ public class GraphRandomCreator {
             int index = 0;
             // repetition for all the Nodes following the 1st path that will be available
             while (!isNodesNodesEliminationArrayRowEmpty) {
-                // if there is a connection from the current Node to another one then ...
+                // if there is a connection from the current Nodes_Edges.Node to another one then ...
                 if (nodesNodesEliminationArray[nodes.indexOf(currentNode)][index] == 1) {
 
                     counter = 0;
-                    // assign the next Node based on the index that was found the 1 declaring the possible connection
+                    // assign the next Nodes_Edges.Node based on the index that was found the 1 declaring the possible connection
                     nextNode = nodes.get(index);
 
-                    // if there is a return to a previous Node (ex A -> B -> A) overpass it
+                    // if there is a return to a previous Nodes_Edges.Node (ex A -> B -> A) overpass it
                     if (nextNode == previousNode) {
                         // close that possible connection to avoid infinite repetition
                         nodesNodesEliminationArray[nodes.indexOf(currentNode)][index] = 0;
@@ -202,14 +202,14 @@ public class GraphRandomCreator {
                         // if index is at the top limit return it to 0
                         if (index == nodeNumber)
                             index = 0;
-                        // break the repetition so a new Node connection lookup starts
+                        // break the repetition so a new Nodes_Edges.Node connection lookup starts
                         break;
                     }
 
                     // close that possible connection to avoid infinite repetition
                     nodesNodesEliminationArray[nodes.indexOf(currentNode)][index] = 0;
 
-                    // remove from the list of Nodes that must be crossed the Node
+                    // remove from the list of Nodes that must be crossed the Nodes_Edges.Node
                     // that was just crossed if it exists there
                     if (nodeListToEliminate.indexOf(currentNode) != -1)
                         nodeListToEliminate.remove(currentNode);
@@ -219,22 +219,22 @@ public class GraphRandomCreator {
                     if (nodeListToEliminate.size() == 0)
                         break;
 
-                    // set the new corresponding Node values
+                    // set the new corresponding Nodes_Edges.Node values
                     previousNode = currentNode;
                     currentNode = nextNode;
 
-                    // if a connection from the Node is not found then ...
+                    // if a connection from the Nodes_Edges.Node is not found then ...
                 } else {
                     // increase a counter
                     counter++;
                     // if counter reaches the max number of nodes and still no connection is found
-                    // then test failed because we are stack at a Node
+                    // then test failed because we are stack at a Nodes_Edges.Node
                     if (counter == nodeNumber) {
                         isNodesNodesEliminationArrayRowEmpty = true;
                     }
                 }
 
-                // proceed to the next Node
+                // proceed to the next Nodes_Edges.Node
                 index++;
                 // if index is at the top limit then return it to 0
                 if (index == nodeNumber)
@@ -244,7 +244,7 @@ public class GraphRandomCreator {
             // if the list of Nodes that must be crossed is empty then proceed
             // to the next stage of the test
             if (nodeListToEliminate.size() == 0) {
-                // the final stage checks if the last Node from stage 2 can connect to the starting Node
+                // the final stage checks if the last Nodes_Edges.Node from stage 2 can connect to the starting Nodes_Edges.Node
                 // in order to secure that the Graph is minimally connected completely
                 boolean anyNodeCanBeConnectedToAnyNode = checkGraph3(currentNode, startingNode, nodeNumber);
                 // if stage 2 is passed then return true that all tests are passed
@@ -263,11 +263,11 @@ public class GraphRandomCreator {
         edges.clear();
         adjacencyArrayList.clear();
 
-        // reset the Node class variables
+        // reset the Nodes_Edges.Node class variables
         Node node = new Node();
         node.reset();
 
-        // reset the Edge class variables
+        // reset the Nodes_Edges.Edge class variables
         Edge edge = new Edge();
         edge.reset();
 
@@ -280,7 +280,7 @@ public class GraphRandomCreator {
     }
 
     // 2nd test stage 2 ensures that the Graph is minimally connected completely
-    // It is needed for the last Node of stage 1 to connect to the starting Node
+    // It is needed for the last Nodes_Edges.Node of stage 1 to connect to the starting Nodes_Edges.Node
     private boolean checkGraph3(Node lastNode, Node startNode, int nodeNumber) {
 
         // the same procedure as stage 1 is held
@@ -335,8 +335,8 @@ public class GraphRandomCreator {
     }
 
     // method to fill the array of Nodes - Edges
-    // A lookup at each edge is done and an 1 is assign at its starting Node
-    // A lookup at each edge is done and a -1 is assign at its ending Node
+    // A lookup at each edge is done and an 1 is assign at its starting Nodes_Edges.Node
+    // A lookup at each edge is done and a -1 is assign at its ending Nodes_Edges.Node
     private void fillArrayNodesEdges(int rows, int columns) {
         nodes.forEach(node -> {
             edges.forEach(
