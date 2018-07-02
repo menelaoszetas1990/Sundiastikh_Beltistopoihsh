@@ -5,6 +5,7 @@ import Nodes_Edges.Node.Node;
 import RandomGenerator.RandomGenerator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GraphRandomCreator {
     // List of Nodes
@@ -22,7 +23,10 @@ public class GraphRandomCreator {
     public void createGraph(int nodeNumber, int edgeNumber) {
 
         // flag boolean variable that will be true only when the graph is minimally connected
-        boolean completeGraph = false;
+        boolean completeGraph;
+
+        // copy of array of array nodes - nodes for visual reasons
+        int [][] copyOfArrayNodesNodes;
 
         // repetition to create the Graph
         do {
@@ -89,19 +93,13 @@ public class GraphRandomCreator {
             // fill the Nodes - Nodes array
             fillArrayNodesNodes(nodeNumber);
 
-            // console printing of the Nodes - Nodes array
-            System.out.println("--------------------------------------");
-            System.out.println("Ignore the above tables");
-            System.out.println("--------------------------------------");
-            System.out.println("This is the nodes - nodes final table");
+            // create a copy of the array nodes - nodes for console printing later
+            copyOfArrayNodesNodes = new int[nodeNumber][nodeNumber];
             for (int i = 0; i < nodeNumber; i++) {
                 for (int j = 0; j < nodeNumber; j++) {
-                    System.out.print(arrayNodesNodes[i][j]);
-                    System.out.print("\t");
+                    copyOfArrayNodesNodes[i][j] = arrayNodesNodes[i][j];
                 }
-                System.out.println();
             }
-            System.out.println("--------------------------------------");
 
             // in order to secure that Graph is minimally connected 2 tests need to be passed
             // both test methods return a boolean
@@ -116,6 +114,17 @@ public class GraphRandomCreator {
 
             // if both test pass then the creation of the raph is complete
         } while (!completeGraph);
+
+        System.out.println("--------------------------------------");
+        System.out.println("This is the nodes - nodes final table");
+        for (int i = 0; i < nodeNumber; i++) {
+            for (int j = 0; j < nodeNumber; j++) {
+                System.out.print(copyOfArrayNodesNodes[i][j]);
+                System.out.print("\t");
+            }
+            System.out.println();
+        }
+        System.out.println("--------------------------------------");
 
         // console printing of the Edges list
         System.out.println("This is the edge list");

@@ -21,14 +21,14 @@ public class Main {
         do {
 
             // menu for the user
-            System.out.println("\n-----------------------------------------------------");
-            System.out.println("------------------- MENU EPILOGWN -------------------");
-            System.out.println("-----------------------------------------------------");
+            System.out.println("\n------------------------------------------------------");
+            System.out.println("------------------- ΜΕΝΟΥ ΕΠΙΛΟΓΩΝ -------------------");
+            System.out.println("------------------------------------------------------");
             System.out.println("1) Dijkstra (Στον γράφο που έχει παραδοθεί)");
             System.out.println("2) Floyd-Marshall  (Στον γράφο που έχει παραδοθεί)");
             System.out.println("3) Random Graph Generator");
             System.out.println("0 για έξοδο");
-            System.out.println("-----------------------------------------------------");
+            System.out.println("------------------------------------------------------");
             System.out.println("Παρακλώ δώστε την επιλογή σας (1 έως 3):");
 
             try {
