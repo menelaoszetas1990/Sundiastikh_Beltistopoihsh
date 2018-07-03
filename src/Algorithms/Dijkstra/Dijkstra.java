@@ -55,10 +55,11 @@ public class Dijkstra {
         ArrayList<Node> unsettledNodes = new ArrayList<Node>();
 
         // ask user to pick the starting Nodes_Edges.Node
+        System.out.println();
         for (int i = 1; i <= graph.nodes.size(); i++) {
             System.out.println(i + " " + graph.nodes.get(i - 1));
         }
-        System.out.println("Pick a Node number from the list above for the starting Node:");
+        System.out.println("\nPick a Node number from the list above for the starting Node:");
         int userIn;
         // check and validate what user inserted
         do {
@@ -74,7 +75,7 @@ public class Dijkstra {
         startingNode = graph.nodes.get(userIn - 1);
         // System.out.println(startingNode);
 
-        System.out.println("Pick a Node number from the list above for the ending Node:");
+        System.out.println("\nPick a Node number from the list above for the ending Node:");
         // check and validate what user inserted
         do {
             while (!userInput.hasNextInt()) {

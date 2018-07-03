@@ -42,10 +42,11 @@ public class FloydWarshall {
         Node endingNode;
 
         // ask user to pick the starting Nodes_Edges.Node
+        System.out.println();
         for (int i = 1; i <= graph.nodes.size(); i++) {
             System.out.println(i + " " + graph.nodes.get(i - 1));
         }
-        System.out.println("Pick a Nodes_Edges.Node number from the list above for the starting Nodes_Edges.Node:");
+        System.out.println("\nPick a Nodes_Edges.Node number from the list above for the starting Nodes_Edges.Node:");
         int userIn;
         // check and validate what user inserted
         do {
@@ -60,7 +61,7 @@ public class FloydWarshall {
         } while (userIn < 1 || userIn > graph.nodes.size());
         startingNode = graph.nodes.get(userIn - 1);
 
-        System.out.println("Pick a Nodes_Edges.Node number from the list above for the ending Nodes_Edges.Node:");
+        System.out.println("\nPick a Nodes_Edges.Node number from the list above for the ending Nodes_Edges.Node:");
         // check and validate what user inserted
         do {
             while (!userInput.hasNextInt()) {

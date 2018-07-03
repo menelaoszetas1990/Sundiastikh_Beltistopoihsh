@@ -115,8 +115,9 @@ public class GraphRandomCreator {
             // if both test pass then the creation of the raph is complete
         } while (!completeGraph);
 
-        System.out.println("--------------------------------------");
-        System.out.println("This is the nodes - nodes final table");
+        System.out.println("\n-----------------------------------------");
+        System.out.println("| This is the nodes - nodes final table |");
+        System.out.println("-----------------------------------------\n");
         for (int i = 0; i < nodeNumber; i++) {
             for (int j = 0; j < nodeNumber; j++) {
                 System.out.print(copyOfArrayNodesNodes[i][j]);
@@ -124,17 +125,17 @@ public class GraphRandomCreator {
             }
             System.out.println();
         }
-        System.out.println("--------------------------------------");
 
         // console printing of the Edges list
-        System.out.println("This is the edge list");
-        System.out.println("--------------------------------------");
+        System.out.println("\n-----------------------------------------");
+        System.out.println("|         This is the edge list         |");
+        System.out.println("-----------------------------------------\n");
         System.out.println("Edge \tCost \tSt. Node \tEnd Node");
-        System.out.println("--------------------------------------");
+        System.out.println("-----------------------------------------");
         edges.forEach(
                 edge -> System.out.println(edge)
         );
-        System.out.println("-------------------------------------");
+        System.out.println("-----------------------------------------");
 
         // list of adjacency
         nodes.forEach(

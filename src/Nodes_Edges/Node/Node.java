@@ -75,11 +75,6 @@ public class Node {
         distanceToAdjacentNodes.put(destinationNode, distance);
     }
 
-    public int getDistanceToAdjacentNodes(Node adjacentNode) {
-        if (distanceToAdjacentNodes.get(adjacentNode) != null)
-            return distanceToAdjacentNodes.get(adjacentNode);
-        return Integer.MAX_VALUE;
-    }
     // ----------------------------------------------------------------------------------------
 
 

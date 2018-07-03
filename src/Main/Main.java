@@ -21,14 +21,14 @@ public class Main {
         // repetition for user to see the menu and pick his choice
         do {
             // menu for the user
-            System.out.println("\n------------------------------------------------------");
-            System.out.println("------------------------ MENU ------------------------");
-            System.out.println("------------------------------------------------------");
+            System.out.println("\n----------------------------------------");
+            System.out.println("|                 MENU                 |");
+            System.out.println("----------------------------------------");
             System.out.println("0) Exit");
             System.out.println("1) Dijkstra (For the given graph)");
             System.out.println("2) Floyd-Warshall  (For the given graph)");
             System.out.println("3) Random Graph Generator");
-            System.out.println("------------------------------------------------------");
+            System.out.println();
             System.out.println("Please give your choice (0 to 3):");
 
             // use of try ... catch for user's bad input and to avoid exit on error
@@ -60,7 +60,7 @@ public class Main {
                     case 3:
                         // ask for the number of nodes of the graph
                         // number of nodes has to be at least 3 in order for the creation to have a point
-                        System.out.println("Give the number of nodes for the graph (greater or equal to 3)");
+                        System.out.println("\nGive the number of nodes for the graph (greater or equal to 3)");
                         // avoid bad input
                         // could be solved with exceptions also
                         while (!userInput.hasNextInt()) {
@@ -80,7 +80,7 @@ public class Main {
                         int nodesNumber = userChoice;
                         // ask for the maximum number of edges that may start from each node of the graph
                         // number of edges has to be at least 2 in order for the creation to have a point
-                        System.out.println("Give the maximum possible number of edges that may start from a node (greater or equal to 2)");
+                        System.out.println("\nGive the maximum possible number of edges that may start from a node (greater or equal to 2)");
                         System.out.println("(Range from 2 to " + (nodesNumber - 1) + ")");
                         // avoid bad input
                         // could be solved with exceptions also

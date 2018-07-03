@@ -52,6 +52,6 @@ public class Edge {
     // method to alter the way an Nodes_Edges.Edge is shown at console
     @Override
     public String toString() {
-        return this.edgeId + "\t" + this.edgeCost + "\t\t" + this.edgeStartingNode + "\t\t" + this.edgeEndingNode;
+        return this.edgeId + "\t" + this.edgeCost + "\t" + this.edgeStartingNode + "\t\t" + this.edgeEndingNode;
     }
 }
