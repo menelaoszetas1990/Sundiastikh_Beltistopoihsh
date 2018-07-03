@@ -14,14 +14,12 @@ public class GraphCreatorTest {
                 System.out.println(node)
         );
 
-
         System.out.println("\n-----------------------------------------------------------------------------");
         System.out.println("Edges list");
         System.out.println("-----------------------------------------------------------------------------");
         graph.edges.forEach(edge ->
                 System.out.println(edge)
         );
-
 
         System.out.println("\n-----------------------------------------------------------------------------");
         System.out.println("Nodes Nodes array");
@@ -33,7 +31,6 @@ public class GraphCreatorTest {
             System.out.println();
         }
 
-
         System.out.println("\n-----------------------------------------------------------------------------");
         System.out.println("Nodes Edges array");
         System.out.println("-----------------------------------------------------------------------------");
@@ -43,7 +40,6 @@ public class GraphCreatorTest {
             }
             System.out.println();
         }
-
 
         System.out.println("\n-----------------------------------------------------------------------------");
         System.out.println("Adjacency array");

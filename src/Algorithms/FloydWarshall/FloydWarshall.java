@@ -1,11 +1,11 @@
-package Algorithms.FloydMarshall;
+package Algorithms.FloydWarshall;
 
 import Graph_Creators.GraphCreator.GraphCreator;
 import Nodes_Edges.Node.Node;
 
 import java.util.Scanner;
 
-public class FloydMarshall {
+public class FloydWarshall {
     private static Scanner userInput = new Scanner(System.in);
 
     // declare the distances array that will be used to calculate
@@ -20,7 +20,7 @@ public class FloydMarshall {
     // caused some arithmetical problems at the program flow
     private static final int INF = 100000;
 
-    public static void runFloydMarshall() {
+    public static void runFloydWarshall() {
         // create the graph
         GraphCreator graph = new GraphCreator();
         graph.createGraph();
@@ -35,7 +35,7 @@ public class FloydMarshall {
         // initialize the path array
         pathInit(graph);
 
-        // declare the nodes that the user will choose for the Floyd-Marshall algorithm
+        // declare the nodes that the user will choose for the Floyd-Warshall algorithm
         // starting Nodes_Edges.Node
         Node startingNode;
         // ending - target Nodes_Edges.Node

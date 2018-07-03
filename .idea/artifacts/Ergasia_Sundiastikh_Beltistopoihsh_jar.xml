@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Ergasia_Sundiastikh_Beltistopoihsh:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Ergasia_Sundiastikh_Beltistopoihsh_jar</output-path>
+    <root id="archive" name="Ergasia_Sundiastikh_Beltistopoihsh.jar">
+      <element id="module-output" name="Ergasia_Sundiastikh_Beltistopoihsh" />
+    </root>
+  </artifact>
+</component>

@@ -1,7 +1,7 @@
 package Main;
 
 import Algorithms.Dijkstra.Dijkstra;
-import Algorithms.FloydMarshall.FloydMarshall;
+import Algorithms.FloydWarshall.FloydWarshall;
 import Graph_Creators.GraphRandomCreator.GraphRandomCreator;
 import Nodes_Edges.Edge.Edge;
 import Nodes_Edges.Node.Node;
@@ -22,14 +22,14 @@ public class Main {
         do {
             // menu for the user
             System.out.println("\n------------------------------------------------------");
-            System.out.println("------------------- ΜΕΝΟΥ ΕΠΙΛΟΓΩΝ -------------------");
+            System.out.println("------------------------ MENU ------------------------");
             System.out.println("------------------------------------------------------");
-            System.out.println("1) Dijkstra (Στον γράφο που έχει παραδοθεί)");
-            System.out.println("2) Floyd-Marshall  (Στον γράφο που έχει παραδοθεί)");
+            System.out.println("0) Exit");
+            System.out.println("1) Dijkstra (For the given graph)");
+            System.out.println("2) Floyd-Warshall  (For the given graph)");
             System.out.println("3) Random Graph Generator");
-            System.out.println("0 για έξοδο");
             System.out.println("------------------------------------------------------");
-            System.out.println("Παρακλώ δώστε την επιλογή σας (1 έως 3):");
+            System.out.println("Please give your choice (0 to 3):");
 
             // use of try ... catch for user's bad input and to avoid exit on error
             try {
@@ -49,10 +49,10 @@ public class Main {
                         // reset the Graph when a solution is found
                         resetGraph();
                         break;
-                    // solve the Floyd-Marshall based on the Graph that is created at GraphCreator class
+                    // solve the Floyd-Warshall based on the Graph that is created at GraphCreator class
                     case 2:
-                        FloydMarshall floydMarshall = new FloydMarshall();
-                        floydMarshall.runFloydMarshall();
+                        FloydWarshall floydWarshall = new FloydWarshall();
+                        floydWarshall.runFloydWarshall();
                         // reset the Graph when a solution is found
                         resetGraph();
                         break;
@@ -60,19 +60,19 @@ public class Main {
                     case 3:
                         // ask for the number of nodes of the graph
                         // number of nodes has to be at least 3 in order for the creation to have a point
-                        System.out.println("Δώστε αριθμό κόμβων που θέλετε να έχει ο γράφος (μεγαλύτερο ή ίσο του 3)");
+                        System.out.println("Give the number of nodes for the graph (greater or equal to 3)");
                         // avoid bad input
                         // could be solved with exceptions also
                         while (!userInput.hasNextInt()) {
-                            System.out.println("Εισάγετε ακέραιο μεγαλύτερο ή ίσο του 3");
+                            System.out.println("Give an integer greater or equal to 3");
                             userInput.next();
                         }
                         userChoice = userInput.nextInt();
                         // check the validity of the integer inserted
                         while (userChoice < 3) {
-                            System.out.println("Εισάγετε ακέραιο μεγαλύτερο ή ίσο του 3");
+                            System.out.println("Give an integer greater or equal to 3");
                             while (!userInput.hasNextInt()) {
-                                System.out.println("Εισάγετε ακέραιο μεγαλύτερο ή ίσο του 3");
+                                System.out.println("Give an integer greater or equal to 3");
                                 userInput.next();
                             }
                             userChoice = userInput.nextInt();
@@ -80,20 +80,20 @@ public class Main {
                         int nodesNumber = userChoice;
                         // ask for the maximum number of edges that may start from each node of the graph
                         // number of edges has to be at least 2 in order for the creation to have a point
-                        System.out.println("Δώστε μέγιστο αριθμό ακμών που θέλετε να ξεκινούν από κάθε κόμβο (μεγαλύτερο ή ίσο του 2)");
-                        System.out.println("(Από το 2 έως το " + (nodesNumber - 1) + ")");
+                        System.out.println("Give the maximum possible number of edges that may start from a node (greater or equal to 2)");
+                        System.out.println("(Range from 2 to " + (nodesNumber - 1) + ")");
                         // avoid bad input
                         // could be solved with exceptions also
                         while (!userInput.hasNextInt()) {
-                            System.out.println("Εισάγετε ακέραιο μεγαλύτερο ή ίσο του 2");
+                            System.out.println("Give an integer greater or equal to 2");
                             userInput.next();
                         }
                         userChoice = userInput.nextInt();
                         // check the validity of the integer inserted
                         while (userChoice < 2 || userChoice > (nodesNumber - 1)) {
-                            System.out.println("Εισάγετε ακέραιο μεγαλύτερο ή ίσο του 2 και μικρότερο ή ίσο του " + (nodesNumber - 1));
+                            System.out.println("Give an integer greater or equal to 2 and smaller or equal to " + (nodesNumber - 1));
                             while (!userInput.hasNextInt()) {
-                                System.out.println("Εισάγετε ακέραιο μεγαλύτερο ή ίσο του 2 και μικρότερο ή ίσο του " + (nodesNumber - 1));
+                                System.out.println("Give an integer greater or equal to 2 and smaller or equal to " + (nodesNumber - 1));
                                 userInput.next();
                             }
                             userChoice = userInput.nextInt();
@@ -106,13 +106,13 @@ public class Main {
                         resetGraph();
                         break;
                     case 0:
-                        System.out.println("Έξοδος");
+                        System.out.println("Exit");
                         break;
                     default:
                         break;
                 }
             } catch (Exception e) {
-                System.out.println("Λαθος εισαγωγή");
+                System.out.println("Wrong input");
                 userInput.nextLine();
             }
         } while (userChoice != 0);

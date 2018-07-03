@@ -84,7 +84,7 @@ public class Node {
 
 
     // ----------------------------------------------------------------------------------------
-    // Functionality for Floyd-Marshall
+    // Functionality for Floyd-Warshall
     public Node(int num) {
         if (num == 0)
             this.nodeId = "Empty";
